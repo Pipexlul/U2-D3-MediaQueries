@@ -7,6 +7,12 @@
   --fel-color-extra: #dc602e;
   --fel-color-background: #faf3dd;
   --fel-color-background-filter: #e7e7e7;
+
+  --fel-products-cards-gap: 10vw;
+  --fel-products-cards-padding: 10vw;
+
+  --fel-products-cards-row-tablet: 2;
+  --fel-products-cards-row-desktop: 4;
 }
 
 body {
@@ -52,6 +58,17 @@ p {
   align-items: center;
 }
 
+.nav-links {
+  display: none;
+  justify-content: space-between;
+  column-gap: 2vw;
+  align-items: center;
+}
+
+.nav-links > a {
+  text-decoration: none;
+}
+
 .filter-bar {
   flex-direction: column;
   justify-content: space-between;
@@ -68,8 +85,9 @@ p {
 
 main {
   flex-direction: column;
-  gap: 10vw;
-  padding: 10vw;
+  justify-content: center;
+  gap: var(--fel-products-cards-gap);
+  padding: var(--fel-products-cards-padding);
 
   grid-area: products;
 }
@@ -103,4 +121,46 @@ main {
   background-color: var(--fel-color-extra);
   border-radius: 10px;
   font-weight: 600;
+}
+
+@media screen and (min-width: 576px) {
+  .card {
+    max-width: calc(
+      (100% - (var(--padding) * 2 + (var(--items) - 1) * var(--gap))) /
+        var(--items) - 1px
+    );
+  }
+
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .navbar > button {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+  .content {
+    grid-template-areas:
+      "navbar navbar"
+      "filter products"
+      "footer footer";
+  }
+
+  .filter-bar {
+    justify-content: flex-start;
+    row-gap: 5px;
+  }
+
+  .card {
+    --gap: var(--fel-products-cards-gap);
+    --padding: var(--fel-products-cards-padding);
+    --items: var(--fel-products-cards-row-tablet);
+  }
 }
