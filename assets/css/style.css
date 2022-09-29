@@ -8,11 +8,15 @@
   --fel-color-background: #faf3dd;
   --fel-color-background-filter: #e7e7e7;
 
-  --fel-products-cards-gap: 10vw;
-  --fel-products-cards-padding: 10vw;
+  --fel-products-cards-gap: 2vw;
+  --fel-products-cards-padding: 2vw;
 
   --fel-products-cards-row-tablet: 2;
   --fel-products-cards-row-desktop: 4;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -30,6 +34,10 @@ p {
   padding: 0;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
 .grid-container {
   display: grid;
 }
@@ -39,6 +47,8 @@ p {
 }
 
 .content {
+  min-height: 100vh;
+
   grid-template-areas:
     "navbar"
     "filter"
@@ -84,10 +94,15 @@ p {
 }
 
 main {
+  --gap: var(--fel-products-cards-gap);
+  --padding: var(--fel-products-cards-padding);
+
   flex-direction: column;
   justify-content: center;
-  gap: var(--fel-products-cards-gap);
-  padding: var(--fel-products-cards-padding);
+  align-items: center;
+  align-content: flex-start;
+  gap: var(--gap);
+  padding: var(--padding);
 
   grid-area: products;
 }
@@ -126,8 +141,10 @@ main {
 @media screen and (min-width: 576px) {
   .card {
     max-width: calc(
-      (100% - (var(--padding) * 2 + (var(--items) - 1) * var(--gap))) /
-        var(--items) - 1px
+      (
+          (100% - (var(--padding) * 2 + ((var(--items) - 1) * var(--gap)))) /
+            var(--items)
+        ) - 1px
     );
   }
 
@@ -158,9 +175,45 @@ main {
     row-gap: 5px;
   }
 
+  main,
   .card {
     --gap: var(--fel-products-cards-gap);
     --padding: var(--fel-products-cards-padding);
+  }
+
+  .card {
     --items: var(--fel-products-cards-row-tablet);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .content {
+    grid-template-areas:
+      "navbar filter"
+      "navbar products"
+      "navbar products"
+      "footer products";
+  }
+
+  .navbar {
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 30px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 50px;
+  }
+
+  main,
+  .card {
+    --gap: var(--fel-products-cards-gap);
+    --padding: var(--fel-products-cards-padding);
+  }
+
+  .card {
+    --items: var(--fel-products-cards-row-desktop);
   }
 }
