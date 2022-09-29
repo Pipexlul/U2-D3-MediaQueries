@@ -8,7 +8,108 @@
     <link rel="stylesheet" href="assets/css/normalize.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <title>PLACEHOLDER</title>
+    <script
+      src="https://kit.fontawesome.com/a13a266165.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Nat Photos</title>
   </head>
-  <body></body>
+  <body>
+    <div class="grid-container content">
+      <nav class="flex-container navbar">
+        <div class="flex-container nav-logo">
+          <i class="fa-solid fa-tree fa-3x"></i>
+          <h1>NatPhotos</h1>
+        </div>
+        <button>
+          <i class="fa-solid fa-bars fa-2x"></i>
+        </button>
+        <div class="flex-container nav-links">
+          <a href="#">Inicio</a>
+          <a href="#">Catálogo</a>
+          <a href="#">Ofertas</a>
+          <a href="#">Contactos</a>
+        </div>
+      </nav>
+      <div class="flex-container filter-bar">
+        <label for="sort-options">Ordenar por:</label>
+        <select id="sort-options">
+          <option value="highest-price">Mayor Precio</option>
+          <option value="lowest-price">Menor Precio</option>
+          <option value="top-seller">Más Vendidos</option>
+        </select>
+      </div>
+      <main class="flex-container">
+        <div class="flex-container card">
+          <img src="assets/img/art1.jpg" alt="Foto sol detras de las nubes" />
+          <h4>$194.300</h4>
+          <button>Ver más</button>
+        </div>
+        <div class="flex-container card">
+          <img
+            src="assets/img/art2.jpg"
+            alt="Foto de mujer sentada en unas rocas con paisaje verde al fondo"
+          />
+          <h4>$95.100</h4>
+          <button>Ver más</button>
+        </div>
+        <div class="flex-container card">
+          <img
+            src="assets/img/art3.jpg"
+            alt="Foto del mar calmado y fuerte neblina"
+          />
+          <h4>$75.100</h4>
+          <button>Ver más</button>
+        </div>
+        <div class="flex-container card">
+          <img
+            src="assets/img/art4.jpg"
+            alt="Foto cielo anaranjado y ligeramente nublado con mar azul por debajo"
+          />
+          <h4>$115.000</h4>
+          <button>Ver más</button>
+        </div>
+        <div class="flex-container card">
+          <img
+            src="assets/img/art5.jpg"
+            alt="Foto bosque de arboles altos y delgados"
+          />
+          <h4>$99.200</h4>
+          <button>Ver más</button>
+        </div>
+        <div class="flex-container card">
+          <img
+            src="assets/img/art6.jpg"
+            alt="Foto cerrillos verdes con arbutos verde oscuro por encima"
+          />
+          <h4>$150.300</h4>
+          <button>Ver más</button>
+        </div>
+        <div class="flex-container card">
+          <img
+            src="assets/img/art7.jpg"
+            alt="Foto de dos arboles antiguos con una ligera niebla en el horizonte"
+          />
+          <h4>$110.500</h4>
+          <button>Ver más</button>
+        </div>
+        <div class="flex-container card">
+          <img
+            src="assets/img/art8.jpg"
+            alt="Foto de cerro con un camino que lleva hacia él"
+          />
+          <h4>$125.900</h4>
+          <button>Ver más</button>
+        </div>
+      </main>
+      <footer class="flex-container main-footer">
+        <div class="flex-container">
+          <i class="fa-brands fa-facebook fa-2x"></i>
+          <i class="fa-brands fa-instagram fa-2x"></i>
+        </div>
+        <p>Todos los derechos reservados</p>
+      </footer>
+    </div>
+  </body>
 </html>
