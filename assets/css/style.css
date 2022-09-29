@@ -216,4 +216,8 @@ main {
   .card {
     --items: var(--fel-products-cards-row-desktop);
   }
+
+  .main-footer {
+    justify-content: center;
+  }
 }
